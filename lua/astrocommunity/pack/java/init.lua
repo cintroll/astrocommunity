@@ -79,7 +79,7 @@ return {
           "-data",
           workspace_dir,
         },
-        root_dir = vim.fs.root(0, { ".git", "mvnw", "gradlew" }),
+        root_dir = vim.fs.root(0, { "mvnw", "gradlew", ".git" }),
         settings = {
           java = {
             eclipse = { downloadSources = true },
