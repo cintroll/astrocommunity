@@ -12,11 +12,14 @@ return {
           [".justfile"] = "just",
         },
       },
+      treesitter = { ensure_installed = { "just" } },
     },
   },
   {
-    "nvim-treesitter/nvim-treesitter",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     optional = true,
-    opts = function(_, opts) require("astrocore").list_insert_unique(opts.ensure_installed, { "just" }) end,
+    opts = function(_, opts)
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "just-lsp" })
+    end,
   },
 }
